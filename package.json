@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/jisu2433/GoCamp/issues"
   },
-  "homepage": "https://github.com/jisu2433/GoCamp#readme",
+  "homepage": "https://jisu2433.github.io/GoCamp",
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.13.3",
     "cloudinary": "^1.30.0",
@@ -42,5 +44,8 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2",
     "sanitize-html": "^2.7.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
