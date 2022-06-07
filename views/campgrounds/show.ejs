@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/stars.css">
 
 <div class="row">
-  <div class="col-6">
     <div id='map'></div>
+  <div class="col-6 mt-5">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <% campground.images.forEach((img, i) => { %>
@@ -43,14 +43,10 @@
         </form>
       </div>
       <% } %>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
     </div>
 
   </div>
-  <div class="col-6">
-  <div id='map' ></div>
+  <div class="col-6 mt-5">
     <% if(currentUser){ %>
     <h2>Leave a Review</h2>
     <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
