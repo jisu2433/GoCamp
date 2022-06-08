@@ -20,10 +20,10 @@ const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
-const MongoStore = require('connect-mongo');
+const MongoDBStore = require("connect-mongo")(session);
 const secret = process.env.SECRET || 'thisshouldbeabettersecret';
 
-const dbUrl =  process.env.DB_URL;
+const dbUrl =  process.env.DB_URL || 'mongodb://localhost:27017/go-camp';
 
 mongoose.connect(dbUrl);
 const db = mongoose.connection;
@@ -43,8 +43,8 @@ app.use(mongoSanitize({
   replaceWith: '_'
 }))
 
-const store = new MongoStore({
-  mongoUrl: dbUrl,
+const store = new MongoDBStore({
+  url: dbUrl,
   secret,
   touchAfter: 24 * 60 * 60
 });
