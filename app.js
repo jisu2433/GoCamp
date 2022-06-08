@@ -23,7 +23,7 @@ const reviewRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo');
 const secret = process.env.SECRET || 'thisshouldbeabettersecret';
 
-const dbUrl =  process.env.DB_URL || 'mongodb://localhost:27017/go-camp';
+const dbUrl =  process.env.DB_URL;
 
 mongoose.connect(dbUrl);
 const db = mongoose.connection;
